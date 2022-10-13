@@ -5,29 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Alumni_Profile</title>
+    
+    <link rel="icon" type="image/x-icon" href="Page_Logo.png">
 
     <!-- CSS Link -->
     <link href="admin_profile.css" rel="stylesheet">
     <!-- CSS Link -->
 
-    <!-- Kit Link -->
-    <script src="https://kit.fontawesome.com/81831682c9.js" crossorigin="anonymous"></script>
-    <!-- Kit Link -->
+     <!-- Kit Link -->
+     <script src="https://kit.fontawesome.com/81831682c9.js" crossorigin="anonymous"></script>
+     <!-- Kit Link -->
 </head>
 
 <body>
- 
-    <!-- <div class="add_feedback popup-screen">
-        <div class="popup-box">
-            <h3>Add Experience <i class="closer fa fa-times"></i></h3>
+
+    <div class="add_feedback popup-screen-exp" id="popup-screen-exp">
+        <div class="popup-box-exp">
+            <h3>Add Experience <i class="closer fa fa-times" onclick="closer()"></i></h3>
+            <input class="company" type="text" name="company_name" placeholder="Enter Company Name...">
             <textarea rows="8" cols="60"></textarea>
-            <button id="share_btn" type="submit">Share</button>
-       </div>
-    </div> -->
+            <button id="share_btn" t ype="submit">Share</button>
+        </div>
+    </div>
+
+    <div class="add_feedback popup-screen-feed" id="popup-screen-feed">
+        <div class="popup-box-feed">
+            <h3>Add FeedBack <i class="closer fa fa-times" onclick="closerfeed()"></i></h3>
+            <textarea rows="8" cols="60"></textarea>
+            <button id="share_btn" t ype="submit">Share</button>
+        </div>
+    </div>
+
+
     <header id="placed">
-         <span>Placed at <span id="company">JUSPAY</span>as <span id="position">SDE-2</span></span>
-         <button type="submit" id="alumni_logout">Log Out</button>
+        <span>Placed at <span id="company">JUSPAY</span>as <span id="position">SDE-2</span></span>
+        <button type="submit" id="alumni_logout">Log Out</button>
     </header>
     <div class="alumni_main">
         <div class="card alumni_photo">
@@ -63,13 +76,13 @@
         </div>
         <div class="card alumni_linkss">
             <div class="alumni_links">
-                <i class="fa-brands fa-linkedin-in"></i>
-                <i class="fa-brands fa-github"></i>
-                <i class="fa-brands fa-instagram"></i>
+                <a href="https://www.linkedin.com/in/krati-goyal-910a39212/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"></a><i class="fa-brands fa-instagram"></i></a>
             </div>
             <div id="feedback">
-                <button type="submit">Add Feedback</button>
-                <button type="submit">Add New Experiences</button>
+                <button type="submit" onclick="openerfeed()">Add Feedback</button>
+                <button type="submit" onclick="opener()">Add New Experiences</button>
             </div>
         </div>
         <div class=" card experiences">
@@ -109,6 +122,25 @@ heap and wrote the code for the same. I accidentally made a mistake which I corr
             </div>
         </div>
     </div>
+
+    <!--  -->
+    <script type="text/javascript">
+        //    const popupscreen=document.querySelector(".popup-screen");
+        function opener() {
+            document.getElementById('popup-screen-exp').style.visibility = 'visible';
+        }
+
+        function closer() {
+            document.getElementById('popup-screen-exp').style.visibility = 'hidden';
+        }
+        function openerfeed() {
+            document.getElementById('popup-screen-feed').style.visibility = 'visible';
+        }
+
+        function closerfeed() {
+            document.getElementById('popup-screen-feed').style.visibility = 'hidden';
+        }
+    </script>
 </body>
 
 </html>
