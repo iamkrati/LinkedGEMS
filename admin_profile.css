@@ -3,7 +3,7 @@ body {
     padding: 0px;
     width: 100%;
     /* background: url("https://images.unsplash.com/photo-1649829658924-448d6522436e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"); */
-    background: linear-gradient(lightgray, gray, rgba(0, 0, 0, 0.84));
+    background: linear-gradient(lightgray, lightgray, rgba(0, 0, 0, 0.614));
     /* background: #9CB4CC; */
     background-repeat: no-repeat;
     background-position: center center;
