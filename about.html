@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="./about.css">
+    <link rel="icon" type="image/x-icon" href="Page_Logo.png">
+</head>
+<body>
+    <h1>About</h1>
+    <div class="about">
+        <p>Lorem ipsum, a, laborum molestias cupiditate doloribus delectus amet corporis est. Mollitia cum explicabo illo, odio eius obcaecati placeat ullam porro. Veniam dicta odit iste quaerat explicabo doloribus minima eos recusandae aperiam repellat. Eius quas minima modi nostrum aliquam quis eum id. Atque libero, fuga eligendi voluptates voluptatum debitis ipsa!</p>
+    </div>
+    <div class="slider">
+        <div class="slides">
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <input type="radio" name="radio-btn" id="radio4">
+       
+        <div class="slide first">
+        <img src="./img1.jpeg" alt="">
+        </div>
+        <div class="slide">
+        <img src="./img2.jpeg" alt="">
+        </div>
+        <div class="slide">
+        <img src="./img3.jpeg" alt="">
+        </div>
+        <div class="slide">
+        <img src="./img4.jpeg" alt="">
+        </div>
+        <div class="navigation-auto">
+        <div class="auto-btn1"></div>
+        <div class="auto-btn2"></div>
+        <div class="auto-btn3"></div>
+        <div class="auto-btn4"></div>
+        </div>
+        </div>
+        <!-- <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+        </div> -->
+        </div>
+       <!--java-script-->
+        <script type="text/javascript">
+        var count = 1;
+        setInterval(function(){
+        document.getElementById('radio' + count).checked = true;
+        count++;
+        if(count > 4)
+        {
+        count = 1;
+        }
+       
+        }, 4000);
+        </script>
+</body>
+</html>
