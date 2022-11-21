@@ -1,6 +1,5 @@
-h1{
-    /* text-decoration: underline; */
-    margin-left: 666px;
+.team_heading{
+    text-align: center;
     text-transform: uppercase;
     font-family: verdana;
     font-size: 45px;
@@ -20,26 +19,30 @@ h1{
     1px 25px 35px rgba(16,16,16,0.2),
     1px 30px 60px rgba(16,16,16,0.4);
 }
-body{
-    background-color: rgb(240, 233, 233);
-}
 img{
     height: 140px;
     width: 140px;
-    margin-left: 35px;
-    margin-top: 43px;
     border-radius: 50%;
 
+}
+
+.line1
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    gap:40px;
+    margin: auto;
 }
 .first
 {
     background-color:white;
-    height: 220px;
-    width: 505px;
-    margin-left: 125px;
-    margin-top: 35px;
+    height: 190px;
+    width: 520px;
     border-radius: 12px;
     display: flex;
+    /* flex-wrap: wrap; */
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     cursor: pointer;
     transition: 1s;
@@ -51,19 +54,14 @@ img{
 
 }
 h2{
-    margin-top: 55px;
-    margin-left: 20px;
     color: #194ec0;
 }
 h4{
-    margin-left: 20px;
-    margin-top: -10px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .icons{
     margin-top: 20px;
     display: flex;
-    margin-left: 25px;
     cursor: pointer;
    
 }
@@ -75,15 +73,59 @@ h4{
     border-radius: 5px;
     
 }
-.line1{
-    display: flex;
-    margin-left: 45px;
-}
-.line2
+.text h2
 {
-    display: flex;
-    margin-left: 45px;
+    text-align: center;
 }
-.line3{
-    margin-left: 45px;
+.text h4
+{
+    width: 300px;
+    text-align: center;
 }
+.text .icons
+{
+    width: 147px;
+    margin: auto;
+}
+@media screen and (max-width:645px) 
+{
+   .first:hover{
+    transform: scale(1);
+   } 
+}
+@media screen and (max-width:504px) 
+{
+    .first
+    {
+       width: 90%;
+       display: flex;
+       flex-direction: column;
+       height: 340px;
+    }
+    .man
+    {
+        height: 360px;
+    }
+    .img
+    {
+        margin: auto;
+        /* width: 100%; */
+    }
+    .text .icons
+    {
+        margin-bottom: 10px;
+    }
+    .text h4
+    {
+         width: 95%;
+         /* text-align: center; */
+    }
+}
+@media screen and (min-width:505px)
+{
+    .img
+    {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+} 
