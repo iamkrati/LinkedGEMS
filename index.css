@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 .u_img img
 {
    width: 300px;
@@ -50,3 +51,45 @@
     left: 0;
     transition: all 0.5s ease 0s;
   }
+
+  /*  */
+
+  nav img {
+    width: 100px;
+    height: 70px;
+    /* margin-left: -34px; */
+    overflow: hidden;
+}
+
+.navbar {
+    background-color: #37517e;
+}
+
+/* Navigation Bar: List Styling */
+
+.navbar ul {
+    margin: 0px 0px 0px 427px;
+    display: flex;
+    font-size: large;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+    color: #0000008c;
+    font-family: 'Arima', cursive;
+    font-family: 'Fredoka One', cursive;
+}
+.navbar a{
+    font-family: 'Poppins', sans-serif;
+    color: white !important;
+}
+.navbar ul li a:hover{
+    text-decoration: underline;
+}
+.nav-item button
+{
+    background: none;
+    border-radius: 40px;
+    border: 2px solid white;
+
+}
