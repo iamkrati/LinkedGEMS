@@ -1,0 +1,112 @@
+
+
+body{background-color: aliceblue;}
+img{
+    float: right;
+    height: 37.5rem;
+    width: 43.75rem;
+    margin-top: 1.25rem;
+    border-radius: 10%;
+    margin-right: 2.5rem;
+
+}
+
+
+.form{
+    width: 20rem;
+    height: 28rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+    position: absolute;
+    top: 7.5rem;
+    left: 14rem;
+    transform: translate(0%,-5%);
+    border-radius: 0.625rem;
+    padding: 1.56rem;
+}
+
+.form h2{
+    width: 13.75rem;
+    font-family: sans-serif;
+    text-align: center;
+    color: #190eea;
+    font-size: 1.37rem;
+    background-color: #fff;
+    border-radius: 0.625rem;
+    margin: 0.125rem;
+    margin-left: 2.375rem;
+    margin-top: 1.25rem;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+.form input{
+    width: 15rem;
+    height: 2.18rem;
+    background: transparent;
+    border-bottom: 0.062rem solid #37517e;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: #fff;
+    font-size: 0.937rem;
+    letter-spacing: 0.062rem;
+    margin-top: 1.125rem;
+    margin-left: 2.187rem;
+    font-family: sans-serif;
+}
+
+.form input:focus{
+    outline: none;
+}
+
+::placeholder{
+    color: #fff;
+    font-family: Arial;
+}
+
+.btnn{
+    width: 15rem;
+    height: 2.5rem;
+    background: #190eea;
+    border: none;
+    margin-top: 1.875rem;
+    margin-left: 2.25rem;
+    font-size: 1.125rem;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.4s ease;
+}
+.btnn:hover{
+    background: rgb(8, 7, 7);
+    color: #aaff00;
+}
+.btnn a{
+    text-decoration: none;
+    color: rgb(247, 244, 244);
+    font-weight: bold;
+}
+.form .link{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.062rem;
+    padding-top: 1.25rem;
+    text-align: center;
+    color: #fff;
+}
+.form .link a{
+    text-decoration: none;
+    color: #00bfff;
+    font-weight: bold;
+}
+@media(min-width:883px){
+    img{
+        width: 40%;
+    }
+}
+
+label
+{
+    /* margin-top: 30px; */
+    color: white;
+    font-weight: bold;
+}
