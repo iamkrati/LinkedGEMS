@@ -1,10 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Login Page</title>
+    <title>Login</title>
     <link rel="stylesheet" href="login.css">
+    <link rel="icon" type="image/x-icon" href="Page_Logo.png">
 </head>
+
 <body>
     <img src="146.jpg" alt="">
     <div class="form">
@@ -15,10 +17,17 @@
         <br><br>
         <label>Enter Password</label>
         <input type="password" name="password" placeholder="Enter Password Here">
-        <button class="btnn"><a href="#">Login</a></button>
+        <button class="btnn" onclick="change()">Login</button>
         <p class="link">Don't have an account<br>
             <a href="signUp.html">Sign up </a> here</a>
         </p>
     </div>
+
+    <script>
+        function change() {
+            window.location.assign("admin_profile.html");
+        }
+    </script>
 </body>
+
 </html>

@@ -79,7 +79,7 @@ img{
 }
 .btnn:hover{
     background: rgb(8, 7, 7);
-    color: #aaff00;
+    /* color: #aaff00; */
 }
 .btnn a{
     text-decoration: none;

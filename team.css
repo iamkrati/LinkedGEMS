@@ -191,7 +191,7 @@ h4{
 .cn:hover{
     background-color: black;
 }
-.cn a{
+.cn{
     text-decoration: none;
     color: white;
 }
