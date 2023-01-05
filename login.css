@@ -13,8 +13,8 @@ img{
 
 
 .form{
-    width: 20rem;
-    height: 28rem;
+    width: 22rem !important;
+    height: 33rem !important;
     background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
     position: absolute;
     top: 7.5rem;
@@ -81,7 +81,7 @@ img{
     background: rgb(8, 7, 7);
     /* color: #aaff00; */
 }
-.btnn a{
+.btnn{
     text-decoration: none;
     color: rgb(247, 244, 244);
     font-weight: bold;
@@ -109,4 +109,10 @@ label
     /* margin-top: 30px; */
     color: white;
     font-weight: bold;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

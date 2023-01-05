@@ -1,3 +1,12 @@
+<?php
+session_start();
+if($_SESSION["status1"]!=true){
+  $_SESSION["status1"]=false;
+  header("Location: loginstudent.php");
+  // die();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -28,10 +37,7 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav hoo ms-auto">
           <li class="nav-item">
-            <a class="nav-link active"  href="./index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <button><a class="nav-link  active" href="menu.html">Log Out</a></button>
+            <button><a class="nav-link  active" href="logout.php">Log Out</a></button>
           </li>
         </ul>
       </div>

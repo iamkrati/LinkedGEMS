@@ -1,8 +1,8 @@
 // swaper js code
 var swiper = new Swiper(".mySwiper", {
     cssMode: true,
-    slidesPerView: 5,
-        spaceBetween: 30,
+    slidesPerView: 3,
+        spaceBetween: 10,
         freeMode: true,
     navigation: {
       nextEl: ".swiper-button-next",

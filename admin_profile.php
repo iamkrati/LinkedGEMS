@@ -1,3 +1,38 @@
+<?php
+session_start();
+if ($_SESSION["status"] != true) {
+    $_SESSION["status"] = false;
+    header("Location: login.php");
+    // die();
+}
+$host = "localhost";
+$user = "root";
+$password = "";
+$db = "gla";
+// error_reporting(E_ERROR | E_PARSE);
+$conn = mysqli_connect($host, $user, $password, $db);
+// header("Location : error.php");
+if ($conn) {
+    $err = "t";
+    // echo "Successfull";
+    // exit();
+} else {
+    // include 'error.php';
+    echo '<div class="alert alert-danger" role="alert">
+      Error - found databse not connected
+     </div>';
+    // exit();
+}
+if (isset($_POST['feedback'])) {
+    $data = $_POST['feedback'];
+    $name = $_SESSION['name'];
+    $ses = $_SESSION['ses'];
+    $sql = "insert into feedback(name,session,feed) Values('" . $name . "','" . $ses . "','" . $data . "')";
+    $result = mysqli_query($conn, $sql);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,73 +41,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni_Profile</title>
-    
+
     <link rel="icon" type="image/x-icon" href="Page_Logo.png">
 
     <!-- CSS Link -->
     <link href="admin_profile.css" rel="stylesheet">
     <!-- CSS Link -->
 
-     <!-- Kit Link -->
-     <script src="https://kit.fontawesome.com/81831682c9.js" crossorigin="anonymous"></script>
-     <!-- Kit Link -->
+    <!-- Kit Link -->
+    <script src="https://kit.fontawesome.com/81831682c9.js" crossorigin="anonymous"></script>
+    <!-- Kit Link -->
 </head>
 
 <body>
-
     <div class="add_feedback popup-screen-exp" id="popup-screen-exp">
         <div class="popup-box-exp">
             <h3>Add Experience <i class="closer fa fa-times" onclick="closer()"></i></h3>
             <input class="company" type="text" name="company_name" placeholder="Enter Company Name...">
             <textarea rows="8" cols="60"></textarea>
-            <button id="share_btn" t ype="submit">Share</button>
+            <button id="share_btn" type="submit">Share</button>
         </div>
     </div>
 
     <div class="add_feedback popup-screen-feed" id="popup-screen-feed">
         <div class="popup-box-feed">
             <h3>Add FeedBack <i class="closer fa fa-times" onclick="closerfeed()"></i></h3>
-            <textarea rows="8" cols="60"></textarea>
-            <button id="share_btn" t ype="submit">Share</button>
+            <form method="post">
+                <textarea rows="8" cols="60" name="feedback"></textarea>
+                <button id="share_btn" type="submit">Share</button>
+            </form>
         </div>
     </div>
 
 
     <header id="placed">
-        <span class="placement">Placed at <span id="company">JUSPAY</span>as <span id="position">SDE-2</span></span>
-        <button type="submit" id="alumni_logout"><a href="./menu.html">Log Out</a></button>
+        <span class="placement">Placed at <span id="company">
+                <?php echo "" . $_SESSION["jobposition"] . "" ?>
+            </span>as <span id="position">
+                <?php echo "" . $_SESSION["jobrole"] . "" ?>
+            </span></span>
+        <button type="submit" id="alumni_logout" name="logout"><a href="./logout.php">Log Out</a></button>
     </header>
     <div class="alumni_main">
         <div class="card alumni_photo">
             <img id="admin_pic" src="Me.jpg">
-            <h2>Krati Goyal</h2>
-            <h4>SDE-2</h4>
+            <h2>
+                <?php echo "" . $_SESSION["name"] . "" ?>
+            </h2>
+            <h4>
+                <?php echo "" . $_SESSION["jobrole"] . "" ?>
+            </h4>
         </div>
         <div class="card alumni_details">
             <div id="name">
                 <span>Full Name : </span>
-                <span>Krati Goyal</span>
+                <span>
+                    <?php echo "" . $_SESSION["name"] . "" ?>
+                </span>
             </div>
             <hr>
             <div id="email">
                 <span>Email ID : </span>
-                <span>gkrati04@gmail.com</span>
+                <span>
+                    <?php echo "" . $_SESSION["email"] . "" ?>
+                </span>
             </div>
             <!-- <hr> -->
             <hr>
             <div id="branch">
                 <span>Branch: </span>
-                <span>B.Tech CS </span>
+                <span>
+                    <?php echo "" . $_SESSION["branch"] . "" ?>
+                </span>
             </div>
             <hr>
             <div id="session">
                 <span>Session: </span>
-                <span>2020-2024 </span>
+                <span>
+                    <?php echo "" . $_SESSION["ses"] . "" ?>
+                </span>
             </div>
         </div>
         <div class="card alumni_linkss">
             <div class="alumni_links">
-                <a href="https://www.linkedin.com/in/krati-goyal-910a39212/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/in/krati-goyal-910a39212/" target="_blank"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
                 <a href="#"><i class="fa-brands fa-github"></i></a>
                 <a href="#"></a><i class="fa-brands fa-instagram"></i></a>
             </div>
