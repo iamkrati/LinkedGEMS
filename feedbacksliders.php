@@ -30,7 +30,7 @@ $result = mysqli_query($conn, $sql);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GLA'S Feedbacks</title>
-  <link rel="icon" type="image/x-icon" href="Page_Logo.png">
+  <link rel="icon" type="image/x-icon" href="./images/Page_Logo.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="swaper.css">
 </head>

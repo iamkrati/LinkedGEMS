@@ -7,25 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="front.css">
     <title>Welcome</title>
-    <link rel="icon" type="image/x-icon" href="Page_Logo.png">
+    <link rel="icon" type="image/x-icon" href="./images/Page_Logo.png">
 
 </head>
 
-<body>
+<body style=" background: #0D324D;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #7F5A83, #274f6b);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #7f5a83bc, #307fb7c0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+;">
     <div style="background-color:#37517e; width: 100%; height: 50px;">
         <a style="float:right; text-decoration: none; color: white; cursor: pointer; margin-top: 10px;
         margin-right: 20px; font-size: 20px;" href="./index.html">Home</a>
     </div>
-    <div class="firsttt">
+    <div class="first">
         <div class="image">
-            <img src="151.jpg" alt="">
+            <img src="./images/admin.png" alt="">
+            <button class="container"><a href="./admin_login.php">Admin</a></button>
+        </div>
+        <div class="image al">
+            <img src="./images/alumnipng.png" alt="">
             <button class="container"><a href="./login.php">Alumni</a></button>
         </div>
-        <div class="imge">
-            <img src="155.jpg" alt="">
-            <button class="contain"><a href="./loginstudent.php">Student</a></button>
+        <div class="image">
+            <img src="./images/studentpng.png" alt="">
+            <button class="container"><a href="./loginstudent.php">Student</a></button>
         </div>
     </div>
+
 </body>
 
 </html>

@@ -21,12 +21,15 @@ if (isset($_POST['submit'])) {
             $crow=mysqli_fetch_assoc($result1);
             // $row = mysqli_fetch_assoc($result)
             $_SESSION['name']=$crow["name"];
+            $_SESSION['Roll']=$crow["UnivRN"];
             $_SESSION['ses']=$crow["session"];
             $_SESSION['email']=$crow["email"];
             $_SESSION['jobposition']=$crow["jobposition"];
             $_SESSION['jobrole']=$crow["jobrole"];
             $_SESSION['branch']=$crow["branch"];
-            $_SESSION["status"] = true;
+            $_SESSION['uploadFile'] = $crow["User"];
+            $_SESSION["ts"]=$crow["ts"];
+            $_SESSION["status"]=true;
             header("Location: admin_profile.php?loginsuccess");
             exit();
         } else {
@@ -43,12 +46,12 @@ if (isset($_POST['submit'])) {
 <head>
     <title>Login</title>
     <link rel="stylesheet" href="login.css">
-    <link rel="icon" type="image/x-icon" href="Page_Logo.png">
+    <link rel="icon" type="image/x-icon" href="./images/Page_Logo.png">
 
 </head>
 
 <body>
-    <img src="146.jpg" alt="">
+    <img src="./images/146.jpg" alt="">
     <div class="form">
         <h2>WELCOME! Alumni</h2>
         <br><br>

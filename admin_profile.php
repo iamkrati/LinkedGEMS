@@ -5,6 +5,7 @@ if ($_SESSION["status"] != true) {
     header("Location: login.php");
     // die();
 }
+
 $host = "localhost";
 $user = "root";
 $password = "";
@@ -30,7 +31,22 @@ if (isset($_POST['feedback'])) {
     $sql = "insert into feedback(name,session,feed) Values('" . $name . "','" . $ses . "','" . $data . "')";
     $result = mysqli_query($conn, $sql);
 }
-
+if (isset($_POST['experience'])) {
+    $data = $_POST['experience'];
+    $name = $_SESSION['name'];
+    $ses = $_SESSION['ses'];
+    $img = $_SESSION['uploadFile'];
+    $cname = $_POST['company_name'];
+    $e=$_SESSION["email"];
+    $date = date('Y-m-d H:i:s');
+    $status = 'pending';
+    $sql = "insert into alumni_experience(name,session,company_name,experience,user,request_date,status,email) Values('" . $name . "','" . $ses . "','" . $cname . "','" . $data . "','" . $img . "','" . $date . "','" . $status . "','" . $e . "')";
+    $result = mysqli_query($conn, $sql);
+}
+$check=$_SESSION["name"];
+$sqls = "select * from alumni_experience where name='$check'";
+$results = mysqli_query($conn, $sqls);
+// 
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +58,7 @@ if (isset($_POST['feedback'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni_Profile</title>
 
-    <link rel="icon" type="image/x-icon" href="Page_Logo.png">
+    <link rel="icon" type="image/x-icon" href="./images/Page_Logo.png">
 
     <!-- CSS Link -->
     <link href="admin_profile.css" rel="stylesheet">
@@ -56,18 +72,20 @@ if (isset($_POST['feedback'])) {
 <body>
     <div class="add_feedback popup-screen-exp" id="popup-screen-exp">
         <div class="popup-box-exp">
-            <h3>Add Experience <i class="closer fa fa-times" onclick="closer()"></i></h3>
-            <input class="company" type="text" name="company_name" placeholder="Enter Company Name...">
-            <textarea rows="8" cols="60"></textarea>
-            <button id="share_btn" type="submit">Share</button>
+            <h3>Add Your Interview Experience <i class="closer fa fa-times" onclick="closer()"></i></h3>
+            <form method="post">
+                <input class="company" type="text" name="company_name" placeholder="Enter Company Name..." required>
+                <textarea rows="8" cols="60" name="experience" required></textarea>
+                <button id="share_btn" type="submit">Share</button>
+            </form>
         </div>
     </div>
 
     <div class="add_feedback popup-screen-feed" id="popup-screen-feed">
         <div class="popup-box-feed">
-            <h3>Add FeedBack <i class="closer fa fa-times" onclick="closerfeed()"></i></h3>
+            <h3>Add GLA's FeedBack <i class="closer fa fa-times" onclick="closerfeed()"></i></h3>
             <form method="post">
-                <textarea rows="8" cols="60" name="feedback"></textarea>
+                <textarea rows="8" cols="60" name="feedback" required></textarea>
                 <button id="share_btn" type="submit">Share</button>
             </form>
         </div>
@@ -84,43 +102,58 @@ if (isset($_POST['feedback'])) {
     </header>
     <div class="alumni_main">
         <div class="card alumni_photo">
-            <img id="admin_pic" src="Me.jpg">
+            <img id="admin_pic" src="./images/alumnipng.png">
             <h2>
                 <?php echo "" . $_SESSION["name"] . "" ?>
             </h2>
             <h4>
                 <?php echo "" . $_SESSION["jobrole"] . "" ?>
             </h4>
+            <a  class="btn btn-primary" href="editprofile.php"><button >Edit profile</button></a>
         </div>
         <div class="card alumni_details">
-            <div id="name">
-                <span>Full Name : </span>
-                <span>
-                    <?php echo "" . $_SESSION["name"] . "" ?>
-                </span>
-            </div>
-            <hr>
-            <div id="email">
-                <span>Email ID : </span>
-                <span>
-                    <?php echo "" . $_SESSION["email"] . "" ?>
-                </span>
-            </div>
-            <!-- <hr> -->
-            <hr>
-            <div id="branch">
-                <span>Branch: </span>
-                <span>
-                    <?php echo "" . $_SESSION["branch"] . "" ?>
-                </span>
-            </div>
-            <hr>
-            <div id="session">
-                <span>Session: </span>
-                <span>
-                    <?php echo "" . $_SESSION["ses"] . "" ?>
-                </span>
-            </div>
+        <table class="table table-bordered">
+                  <tr>
+                    <th width="30%">Full Name</th>
+                    <td width="2%">:</td>
+                    <td> <?php echo "" . $_SESSION["name"] . "" ?></td>
+                  </tr>
+                  <tr>
+                    <th width="30%">Batch</th>
+                    <td width="2%">:</td>
+                    <td><?php echo "" . $_SESSION["ses"] . "" ?></td>
+                  </tr>
+                  <tr>
+                    <th width="30%">Branch</th>
+                    <td width="2%">:</td>
+                    <td><?php echo "" . $_SESSION["branch"] . "" ?></td>
+                  </tr>
+                  <tr>
+                    <th width="30%">Univ.RN</th>
+                    <td width="2%">:</td>
+                    <td><?php echo "" . $_SESSION["Roll"] . "" ?></td>
+                  </tr>
+                  <tr>
+                    <th width="30%">Email</th>
+                    <td width="2%">:</td>
+                    <td><?php echo "" . $_SESSION["email"] . "" ?></td>
+                  </tr>
+                  <tr>
+                    <th width="30%">Tech Stack</th>
+                    <td width="2%">:</td>
+                    <td><?php echo $_SESSION["ts"] ?></td>
+                  </tr>
+                  <tr>
+                    <th width="30%">Job Profile</th>
+                    <td width="2%">:</td>
+                    <td><?php echo "" . $_SESSION["jobrole"] . "" ?></td>
+                  </tr>
+                  <tr>
+                    <th width="30%">Company</th>
+                    <td width="2%">:</td>
+                    <td><?php echo "" . $_SESSION["jobposition"] . "" ?></td>
+                  </tr>
+                </table>
         </div>
         <div class="card alumni_linkss">
             <div class="alumni_links">
@@ -130,45 +163,34 @@ if (isset($_POST['feedback'])) {
                 <a href="#"></a><i class="fa-brands fa-instagram"></i></a>
             </div>
             <div id="feedback">
-                <button type="submit" onclick="openerfeed()">Add Feedback</button>
-                <button type="submit" onclick="opener()">Add New Experiences</button>
+                <button type="submit" onclick="openerfeed()">Add GLA's Feedback</button>
+                <button type="submit" onclick="opener()">Add Your Interview Experience </button>
+                <a href="./php/admin/alumni_dashboard.php"><button type="submit">Add Your Blog/Job_Post </button></a>
+                <a href="chatwithstu.php"><button type="submit"> Connect with Students </button></a>
             </div>
         </div>
         <div class=" card experiences">
             <h2 class="text">My Experiences</h2>
-            <div class="exp">
-                <h4>Amazon</h4>
-                <textarea cols="150" rows="20" wrap="hard">
-Hiring Process :
+            <?php
+            while ($row = mysqli_fetch_assoc($results)) {
+                ?>
+                <div class="exp">
+                    <h4>
+                        <?php echo $row['company_name']; ?>
+                    </h4>
 
-Online Assessment Round
-Technical Interview Round 1
-Technical Interview Round 2
-Hiring Manager Interview
-Online Assessment Round: Platform: HackerRank.
-                        
-Assessment consists of two sections:
-                        
-Coding Challenge – It consists of two easy coding problems that you need to solve in 105 minutes alongwith explaining the approach and time complexity.
-I don’t remember the exact problems, but the topic covered was generally arrays(insertion in sorted array using binary search, sorting array based on 
-a condition).
-                        
-Amazon Work Style Survey – This takes approx. 10-15 minutes to be completed and contains questions to assess your work ethics and principles. It also 
-tests how you approach work in general and whether you are a good fit for the company as per Amazon Leadership Principles. 
-Each question consists of two parts where you have to choose from options like most like me, somewhat like me, etc.
-                        
-The next day I received a mail that I successfully passed the online assessment round and got information about the next three rounds along with some 
-preparatory materials and tips. My next two rounds were scheduled on the same day with a gap of around 3-4 hours between them.
-                        
-Technical Round 1 (60 minutes): Initially, the interviewer introduced himself and asked me to do the same. Then he asked me to explain a situation 
-where I learned something new or from scratch. This discussion took 5 minutes. After that interviewer jumped to the coding question.
-                        
-Question 1:  Devise a sorting algorithm
-                        
-I started with a brute force algorithm and the interviewer asked me to think of an optimized way. After some hints, I was able to solve it using 
-heap and wrote the code for the same. I accidentally made a mistake which I corrected on a dry run myself. 
-                </textarea>
-            </div>
+                    <textarea cols="150" rows="20" wrap="hard" readonly>
+                        <?php echo $row['experience']; ?>
+                        </textarea>
+                    <div style="background-color: #37517e; margin-top: -30px; height: 41px;">
+                        <p style="color:white; float:right; margin-right:10px">
+                            Status : <?php echo $row['Status']; ?>
+                        </p>
+                    </div>
+                </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
 

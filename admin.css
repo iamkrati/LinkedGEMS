@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+
+}
+
+:root {
+    --black: black;
+    --text-color-1: #444;
+    --bg-color-1: #fff;
+    --bg-color-2: #eee;
+    --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+}
+
+.bg-image {
+    height: 900px;
+    width: 100%;
+    position: absolute;
+    /* background-image: url("./images/pexels-andrea-piacquadio-3769146.jpg"); */
+    background: #0D324D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #7F5A83, #274f6b);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #7f5a83bc, #307fb7c0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    ;;
+}
+
+.bg-content {
+    line-height: 1rem;
+
+}
+
+.bg-image .bg-content h3 {
+    margin-left: 194px;
+    margin-top: 73px;
+    color: #00225b;
+    font-size: 4rem;
+    font-family: 'Rampart One', cursive;
+}
+
+.bg-image .bg-content p {
+    color: #ffffff;
+    font-size: 1.7rem;
+    margin-left: 194px;
+}
+
+section {
+    padding: 1rem 1%;
+}
+
+.blogs .box-container {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.blogs .box-container .box {
+    /* background: var(--bg-color-1); */
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    color: white;
+}
+
+.blogs .box-container .box .image {
+    height: 20rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: .5rem;
+    background: var(--bg-color-2);
+}
+
+.blogs .box-container .box .image img {
+    height: 100%;
+    width: 100%;
+}
+
+.blogs .box-container .box:hover .image img {
+    transform: scale(1.2);
+}
+
+.blogs .box-container .box .content {
+    padding-top: 1rem;
+}
+
+.blogs .box-container .box .content h3 {
+    font-size: 20px;
+    /* font-family:fantasy; */
+    line-height: 1.5;
+    letter-spacing: 2PX;
+    text-align: center;
+    font-family: 'Tilt Warp', cursive;
+}
+
+.blogs .box-container .box .content .icons {
+    display: flex;
+    justify-content: space-between;
+    border-top: .1rem solid;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+}
+
+.blogs .box-container .box .content .icons a:hover {
+    color: gray;
+}
+
+a {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+
+
+/*  */
+nav img {
+    width: 100px;
+    height: 70px;
+    /* margin-left: -34px; */
+    overflow: hidden;
+}
+
+.navbar {
+    background-color: #37517e;
+}
+
+/* Navigation Bar: List Styling */
+
+.navbar ul {
+    margin: 0px 0px 0px 427px;
+    display: flex;
+    font-size: medium;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+    color: #0000008c;
+    font-family: 'Arima', cursive;
+    font-family: 'Fredoka One', cursive;
+}
+
+.navbar a {
+    font-family: 'Poppins', sans-serif;
+    color: white !important;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+.nav-item button {
+    background: none;
+    border-radius: 40px;
+    border: 2px solid white;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10px;
+}
+
+/*  */

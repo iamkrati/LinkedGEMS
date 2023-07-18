@@ -12,7 +12,7 @@ img{
 
 .form{
     width: 23rem;
-    height: 34rem;
+    /* height: 20rem; */
     background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
     position: absolute;
     top: 5.5rem;
@@ -24,16 +24,15 @@ img{
 
 .form h2{
     width: 13.75rem;
+    margin: auto;
+    padding: 12px 12px;
+    /* height: 30px; */
     font-family: sans-serif;
     text-align: center;
     color: #190eea;
     font-size: 1.37rem;
     background-color: #fff;
     border-radius: 0.625rem;
-    margin: 0.125rem;
-    margin-left: 2.375rem;
-    margin-top: 1.25rem;
-    padding: 0.5rem;
     font-weight: bold;
 }
 
@@ -41,7 +40,7 @@ img{
     width: 15rem;
     height: 2.18rem;
     background: transparent;
-    border-bottom: 0.062rem solid #37517e;;
+    /* border-bottom: 0.062rem solid #37517e;; */
     border-top: none;
     border-right: none;
     border-left: none;
@@ -53,10 +52,15 @@ img{
     font-family: sans-serif;
 }
 
-.form input:focus{
+.form input:focus
+{
     outline: none;
 }
 
+h5{
+    text-align: center;
+    color:white
+}
 ::placeholder{
     color: #fff;
     font-family: Arial;
@@ -67,7 +71,7 @@ img{
     height: 2.5rem;
     background: #190eea;
     border: none;
-    margin-top: 2.5rem;
+    /* margin-top: 2.5rem; */
     margin-left: 2.25rem;
     font-size: 1.125rem;
     border-radius: 0.625rem;

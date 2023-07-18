@@ -1,0 +1,57 @@
+body {
+    background: #0D324D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #7F5A83, #274f6b);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #7F5A83, #307eb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    color: #e0d3d3;
+}
+.student-profile .card .card-header .profile_img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 10px auto;
+    border: 5px solid #aba6a6;
+    border-radius: 50%;
+   
+}
+.student-profile .card h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.student-profile .card p {
+    font-size: 16px;
+    color: #000;
+    /* background-color: #7F5A83; */
+    
+}
+.student-profile .table th,
+.student-profile .table td {
+    font-size: 14px;
+    padding: 5px 10px;
+    color: #000;
+    border: none;
+}
+.card-body
+{
+    background-color: #c2c2c4;
+
+}
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+    background-color: #37517e;
+  }
+  .table-bordered {
+    border: none;
+  }
+  /* .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: 
+    inherit;
+    margin-top: 1rem;
+  } */

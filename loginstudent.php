@@ -1,27 +1,27 @@
-<?php include('conn.php') ?>
 <?php
-session_start();
-$_SESSION["status1"]=false;
-//  $_SESSION['userLogin']='';
-if (isset($_POST['submit'])) {
-    $roll = $_POST['rollno'];
-    $p = $_POST['password'];
-    $sql = "select * from studentlogin where rollno='".$roll."' AND pass='" .$p. "'
-    limit 1";
-   
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        $row = mysqli_num_rows($result);
-        if ($row) {
-            // $crow=mysqli_fetch_assoc($result);
-            $_SESSION["status1"] = true;
-            header("Location: Student.php");
-            exit();
-        } else {
-    echo '<div class="alert alert-danger" role="alert">
-        User Not Found <strong> Try Again <strong>
-     </div>';
+require_once("config.php");
+if(isset($_POST['sublogin']))
+{
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+    $query="select * from users where(email='$email')";
+    $res=mysqli_query($dbc,$query);
+    $numrows=mysqli_num_rows($res);
+    if($numrows==1)
+    {
+        $row = mysqli_fetch_assoc($res);
+        if(($password==$row['password']))
+        {
+            $_SESSION["login_sess"]="1";
+            $_SESSION["login_email"]=$row['email'];
+            header("location:Main_Student.php");
         }
+        else{
+            header("location:loginstudent.php");
+        }
+    }
+    else{
+        header("location:loginstudent.php");
     }
 }
 ?>
@@ -30,23 +30,26 @@ if (isset($_POST['submit'])) {
 
 <head>
     <title>Login</title>
-    <link rel="icon" type="image/x-icon" href="Page_Logo.png">
+    <link rel="icon" type="image/x-icon" href="./images/Page_Logo.png">
     <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
-    <img src="146.jpg" alt="">
+    <img src="./images/146.jpg" alt="">
     <div class="form">
         <h2>WELCOME! Student</h2>
         <br><br>
         <form method="post">
-            <label>University Roll No</label>
-            <input type="number" name="rollno" placeholder="Enter University Roll No" required>
+            <label>University Email</label>
+            <input type="email" name="email" placeholder="Enter email" required>
             <br><br>
             <label>Enter Password</label>
             <input type="password" name="password" placeholder="Enter Password Here" required>
-            <button class="btnn" type="submit" name="submit">Login</button>
+            <button class="btnn" type="submit" name="sublogin">Login</button>
         </form>
+        <p class="link">Don't have an account<br>
+            <a href="signupStudent.php">Sign up </a> here</a>
+        </p>
     </div>
 </body>
 

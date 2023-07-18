@@ -1,7 +1,4 @@
 <?php
-session_start();
-unset($_SESSION["name"]);
-unset($_SESSION["ses"]);
-session_unset();
+session_destroy();
 header("Location: menu.html");
 ?>

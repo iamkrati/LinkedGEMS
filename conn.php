@@ -15,6 +15,7 @@ if ($conn) {
     echo '<div class="alert alert-danger" role="alert">
       Error - found databse not connected
      </div>';
+     http_response_code(500);
     // exit();
 }
 ?>

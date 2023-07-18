@@ -15,14 +15,37 @@
   <script src="https://kit.fontawesome.com/81831682c9.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="team.css">
-  <link rel="icon" type="image/x-icon" href="Page_Logo.png">
+  <link rel="icon" type="image/x-icon" href="./images/Page_Logo.png">
+  <!-- 
+
+   -->
+  <link rel="stylesheet" media="all" href="style/setup.css">
+  <link rel="stylesheet" media="all" href="style/says.css">
+  <link rel="stylesheet" media="all" href="style/reply.css">
+  <link rel="stylesheet" media="all" href="style/typing.css">
+  <link rel="stylesheet" media="all" href="style/input.css">
+  <link rel="stylesheet" media="all" href="style/button.css">
+
+  <!-- 
+
+    -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
   <title>Alumni-Hub</title>
 </head>
 
 <body>
+  <!--  -->
+  
+  <button data-aos="fade-left" onclick="start_the_service()" id="mn-btn">
+    <h4 id="chatter-msg"> Chat with us 👋</h4> <img id="ch" src="./image/bot.png"></button>
+  <!--  -->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="./GLA_University_logo.png">Alumni-Hub</a>
+      <a class="navbar-brand" href="#"><img src="./images/GLA_University_logo.png">Alumni-Hub</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -38,19 +61,23 @@
                 href="">About</a> -->
             <a class="nav-link active" href="#aboutteam">About</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link  active" href="#teamer">Team</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link  active" href="./feedbacksliders.php">Feedback</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  active" href="./ranking.php">Top Ranker's</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
   <div class="main1">
     <div class="main">
-      <h1 id="cont_heading">Alumni Portal of</h1> <br>
+      <h1 id="cont_heading">LinkedGEMS</h1> <br>
       <h1 class="univ_name"> GLA UNIVERSITY</h1>
 
       <p class="par">Want to know about the placement journey of your seniors</p>
@@ -67,117 +94,43 @@
 
       <div id="slider">
         <div class="slides">
-          <img src="img1.jpeg" width="100%" class="about_img" />
+          <img src="./images/img1.jpeg" width="100%" class="about_img" />
         </div>
 
         <div class="slides">
-          <img src="img2.jpeg" width="100%" class="about_img" />
+          <img src="./images/img2.jpeg" width="100%" class="about_img" />
         </div>
 
         <div class="slides">
-          <img src="img3.jpeg" width="100%" class="about_img" />
+          <img src="./images/img3.jpeg" width="100%" class="about_img" />
         </div>
 
         <div class="slides">
-          <img src="img4.jpeg" width="100%" class="about_img" />
+          <img src="./images/img4.jpeg" width="100%" class="about_img" />
         </div>
 
         <div class="slides">
           <img src="https://www.gla.ac.in/Uploads/banner/45hbanner_banner-1.jpg" width="100%" class="about_img" />
         </div>
 
-        <div id="dot"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span
-            class="dot"></span><span class="dot"></span></div>
-      </div>
-    </div>
-    <h1 class="team_heading">Team</h1>
-    <div id="teamer" class="line1">
-      <div class="first">
-        <div class="img">
-          <img src="./mentor.jpeg" alt="mentor pic">
+        <div id="dot">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
         </div>
-        <div class="text">
-          <h2>Mandeep Singh</h2>
-          <h4>Project Mentor, Technical Trainee,GLA UNIVERSITY</h4>
-          <div class="icons">
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-            <a href=""><i class="fa-brands fa-linkedin"></i></a>
-          </div>
-        </div>
-
-      </div>
-      <div class="first">
-        <div class="img">
-          <img src="./Formal_Pass.jpeg" alt="error">
-        </div>
-        <div class="text">
-          <h2>Krati Goyal</h2>
-          <h4>Pre-Final Year Student ,<br>Full Stack Developer</h4>
-          <div class="icons">
-            <a href="https://www.instagram.com/krati_goyal_kg/"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/krati-goyal-910a39212/"><i class="fa-brands fa-linkedin"></i></a>
-          </div>
-        </div>
-
-      </div>
-      <div class="first">
-        <div class="img">
-          <img src="./sidhi.jpeg" alt="error">
-        </div>
-        <div class="text">
-          <h2>Sidhi Agarwal</h2>
-          <h4>Pre-Final Year Student , FrontEnd Developer</h4>
-          <div class="icons">
-            <a href="https://www.instagram.com/siddhiagarwal0602/"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/sidhi-agarwal-a977731b6/"><i class="fa-brands fa-linkedin"></i></a>
-          </div>
-        </div>
-
-      </div>
-      <div class="first">
-        <div class="img">
-          <img src="./smriti.jpeg" alt="error">
-        </div>
-        <div class="text">
-          <h2>Smriti Srivastava</h2>
-          <h4>Pre-Final Year Student , FrontEnd Developer</h4>
-          <div class="icons">
-            <a href="https://www.instagram.com/smritis0405/"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/smriti-srivastava-6432661ba/"><i class="fa-brands fa-linkedin"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="first">
-        <div class="img">
-          <img src="./anubhav.jpeg" alt="error">
-        </div>
-        <div class="text">
-          <h2>Anubhav Raj</h2>
-          <h4>Pre-Final Year Student , FrontEnd Developer</h4>
-          <div class="icons">
-            <a href="https://www.instagram.com/anubhavv_rajj/"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/anubhav-raj-5a1261216/"><i class="fa-brands fa-linkedin"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="first man">
-        <div class="img">
-          <img src="./manvendra.jpeg" alt="error">
-        </div>
-        <div class="text">
-          <h2>Manvendra Singh</h2>
-          <h4>Pre-Final Year Student , FrontEnd Developer</h4>
-          <div class="icons">
-            <a href="https://www.instagram.com/rajput_maan_/"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/manvendra-singh-49a1751b9/"><i class="fa-brands fa-linkedin"></i></a>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
   </div>
   <script src="./about.js"></script>
+  <script src="script/Bubbles.js"></script>
+  <script type="text/javascript" src="script/button.js"></script>
+  <script>
+    
+    AOS.init();
+  </script>
   <!-- <a href="admin_profile.html">profie</a>    -->
 </body>
 
